@@ -1,4 +1,4 @@
-// Partiion a linked list around value x, so all nodes less than x come before all nodes
+// Partition a linked list around value x, so all nodes less than x come before all nodes
 // greater than or equal to x. If x is within the list, x only needds to be after nodes less than x
 class Node {
   constructor(data, next = null) {
@@ -79,50 +79,70 @@ class LinkedList {
   }
 }
 
+// Partition a list around value x
 function partition(list, x) {
-  let head = new Node(null);
-  let tail = new Node(null);
+  let head = null;
+  let tail = null;
 
-  list = list.head;
-  while (list != null) {
-    if (list.data < x) {
-      head = new Node(list.data, head);
+  // first traverse the list. Values smaller than x are attached to the head
+  // values larger than x are attached to the tail
+  let pointer = list.head;
+  while (pointer != null) {
+    if (pointer.data < x) {
+      head = new Node(pointer.data, head);
     } else {
-      tail = new Node(list.data, tail);
+      tail = new Node(pointer.data, tail);
     }
-    list = list.next;
+    pointer = pointer.next;
   }
-  head = new Node(head, tail);
 
-  return head;
+  // Traverse the head until its end, attach the tail to the end of the head
+  // and return the result
+  let pointer2 = head;
+  while (pointer2 != null) {
+    if (pointer2.next === null) {
+      pointer2.next = tail;
+      pointer2 = head;
+      break;
+    }
+    pointer2 = pointer2.next;
+  }
+  return pointer2;
 }
 
-/*
+// Traverses a linked list and adds the data to a string (for testing purposes)
 function returnList(list) {
   let result = '';
-  while (list) {
-    result += list.data;
-    list = list.next;
+  let pointer = list;
+  while (pointer !== null) {
+    result += `${pointer.data} `;
+    pointer = pointer.next;
   }
   return result;
 }
-*/
+
+/* TESTS */
 let listA = new LinkedList();
 listA.insertIterable([1, 10, 12, 4, 3, 8, 2, 1]);
 
-let b = partition(listA, 4);
-//printList(b);
-/*
-//TESTS
-kthToLast(listA, 4).data === 'hello'
+let listB = new LinkedList();
+listB.insertIterable([12, 30, 6, 7, 9, 13, 25, 60]);
+
+let listC = new LinkedList();
+listC.insertIterable([1, 2, 33, 84, 13, 5, 4]);
+
+let partitionedListA = partition(listA, 4);
+let partitionedListB = partition(listB, 10);
+let partitionedListC = partition(listC, 6);
+
+returnList(partitionedListA) === '1 2 3 1 8 4 12 10 '
   ? console.log('Test passed')
   : console.log('Test failed');
 
-kthToLast(listB, 1).data === 'of course'
+returnList(partitionedListB) === '9 7 6 60 25 13 30 12 '
   ? console.log('Test passed')
   : console.log('Test failed');
 
-kthToLast(listC, 5).data === 'japan'
+returnList(partitionedListC) === '4 5 2 1 13 84 33 '
   ? console.log('Test passed')
   : console.log('Test failed');
-*/
