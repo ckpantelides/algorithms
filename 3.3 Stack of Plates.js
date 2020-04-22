@@ -1,4 +1,4 @@
-//Describe a SetofStacks that creates a new Stack everytime a Stack reaches a
+// Describe a SetofStacks that creates a new Stack everytime a Stack reaches a
 // certain limit. It should pop and push like a single Stack
 class Node {
   constructor(data, previous = null) {
