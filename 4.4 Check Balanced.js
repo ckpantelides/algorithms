@@ -18,7 +18,7 @@ const getHeight = function (root) {
 };
 
 function isBalanced(root) {
-  // /Base case. If we reach the root with returning false previously, all subtrees are balanced
+  // /Base case. If we reach the root without returning false previously, all subtrees are balanced
   if (root === null) return true;
   let heightDiff = getHeight(root.left) - getHeight(root.right);
   // If the difference in height of the two subtrees is more than one

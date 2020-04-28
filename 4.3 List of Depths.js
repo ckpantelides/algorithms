@@ -1,5 +1,4 @@
-//import { createMinimalBST, startBST } from './4.2 Minimal Tree.mjs';
-// Create a linked list for each depth of a brinary tree, i.e. D linked lists
+// Create a linked list for each depth of a binary tree, i.e. D linked lists
 // for a tree of depth D
 class TreeNode {
   constructor(data) {
