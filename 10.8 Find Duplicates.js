@@ -2,6 +2,10 @@
 // The array may have duplicate numbers, and N is unknown. With only 4kb of memory
 // how would you print all duplicate in the array
 
+// N.B. Should a different typed array have been used?
+// Uint8Array: An array of 8-bit unsigned integers - 1 byte per entry
+// Uint32Array: An array of 32-bit unsigned integers - 4 bytes per entry
+
 // 4kb = 4 * 8 bits * 2^10 = 32 * 1024, which is greater than 32,000
 // Using a bit vector, we can iterate through the array, flag each element V by setting
 // bit V to 1, and then print any duplicates we come across (as bit V will already by set)
