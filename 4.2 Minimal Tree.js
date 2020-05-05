@@ -1,7 +1,7 @@
 // Given a sorted increasing order array with unique integer elemenets, write an alogorithm
 // to create a binary search tree with minimal height
 
-// A each node in a binary tree has two descendents - left and right. In a binary search tree
+// Each node in a binary tree has two descendents - left and right. In a binary search tree
 // left descendent <= n < right descendent.
 class Node {
   constructor(data) {

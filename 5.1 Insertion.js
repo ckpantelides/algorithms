@@ -7,7 +7,7 @@
 // and | them as |1 turns on bits
 const MinsideN = (M, N, i, j) => {
   let leftMask = -1 << (j + 1); // i.e. 111100000
-  let rightMask = (1 << i) - 1; // ie.e 00001111
+  let rightMask = (1 << i) - 1; // i.e 00001111
   let mask = leftMask | rightMask;
   let clearedN = N & mask;
   // We can OR M and N together now, however first we need to leftshift M by i, so its bits line up

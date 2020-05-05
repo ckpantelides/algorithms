@@ -2,7 +2,7 @@
 // For n === 2 combinations === ()(), (())
 
 function getParens(n) {
-  //String will hold the combination of parentheses ie. ()() or (()) etc
+  //String will hold each single combination of parentheses ie. ()() or (()) etc
   string = '';
   // Results will hold the different combinations
   results = [];

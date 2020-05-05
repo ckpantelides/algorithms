@@ -54,16 +54,6 @@ class Graph {
       visited[el] = false;
     });
     this._dfsUtil(startingNode, visited);
-
-    // Search with no input/starting node
-    /*
-    const nodes = Object.keys(this.adjList);
-    const visited = {};
-    for (let i = 0; i < nodes.length; i++) {
-      const node = nodes[i];
-      this._dfsUtil(node, visited);
-    }
-    */
   }
 
   _dfsUtil(vertex, visited) {
@@ -76,18 +66,6 @@ class Graph {
         this._dfsUtil(neighbor, visited);
       }
     }
-    // Search with no input?
-    /*
-    if (!visited[vertex]) {
-      visited[vertex] = true;
-      console.log(vertex, visited);
-      const neighbors = this.adjList[vertex];
-      for (let i = 0; i < neighbors.length; i++) {
-        const neighbor = neighbors[i];
-        this._dfsUtil(neighbor, visited);
-      }
-    }
-    */
   }
   // Breadth first search
   bfs(startingNode) {

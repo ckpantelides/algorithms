@@ -1,4 +1,4 @@
-// A magic index is when A[i] = i. Given a sort array of distinct integers, see
+// A magic index is when A[i] = i. Given a sorted array of distinct integers, see
 // if there is a magic array.
 
 // We could look at all elements, but adopting binary search is faster

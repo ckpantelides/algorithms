@@ -10,14 +10,12 @@ function URLify(string) {
       string[i + 1] !== undefined
     ) {
       URLarray.push('%20');
-      debugger;
     } else if (string[i] !== ' ') {
       URLarray.push(string[i]);
     }
   }
   return URLarray.join('');
   console.log(URLarray.join(''));
-  debugger;
 }
 
 URLify('John Smith ') === 'John%20Smith'

@@ -28,7 +28,7 @@ function routeBetween(graph, startNode, endNode) {
     let getQueueElement = q.dequeue();
 
     // Get the adjacent nodes, loop through them. If they're the end node, result is
-    // true as there is a route. N.B. forEach returns undefined, which I've used a for loop
+    // true as there is a route. N.B. forEach returns undefined, which is why I've used a for loop
     let get_List = graph.adjList[getQueueElement];
     for (let i = 0; i < get_List.length; i++) {
       let neighbour = get_List[i];

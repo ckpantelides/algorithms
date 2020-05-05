@@ -1,6 +1,6 @@
-//Given a sorted array of n integers that has been rotated an unknown number
+// Given a sorted array of n integers that has been rotated an unknown number
 // of times, write code to find an element in the array. The array was originally sorted
-// in increasing order.\
+// in increasing order.
 
 // A rotated array has had its elements shifted a number of times, with the
 // elements at the end rejoining at the start of the array
@@ -16,7 +16,7 @@ const searchRotated = (x, array, left, right) => {
   if (right < left) {
     return -1;
   }
-  // Once half of a rotated array will always be ordered normally. First we find out which
+  // One half of a rotated array will always be ordered normally. First we find out which
   // half is ordered normally, then see if x is within that half. If it is, search this half,
   // else search the other half
   if (array[left] < array[mid]) {
