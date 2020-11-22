@@ -92,6 +92,22 @@ function removeDups(list) {
   return uniqueList;
 }
 
+// OR 
+
+function removeDups2(firstNode) {
+  let dataStore = new Map();
+  let previousNode = null;
+  let node = firstNode;
+  while (node.next !== null) {
+    if (dataStore.has(node.data)) {
+      previousNode.next = node.next;
+    } else {
+      dataStore.set(node.data, true);
+      previousNode = node;
+    } node = node.next;
+  }
+}
+
 let listA = new LinkedList();
 listA.insertIterable(['hello', 'there', 'there', 'hello', 'bye']);
 
