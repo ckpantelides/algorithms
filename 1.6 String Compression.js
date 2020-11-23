@@ -23,7 +23,29 @@ const stringCompression = (string) => {
   return result.length < string.length ? result : string;
 };
 
+function stringCompression2(string) {
+  let characterCount = 0;
+  let compressedString = '';
+
+  for (let i = 0; i < string.length; i++) {
+    characterCount++;
+    if (i + 1 > string.length || string[i] !== string[i + 1]) {
+      compressedString += string[i] + characterCount;
+      characterCount = 0;
+    }
+  }
+  return compressedString;
+}
+
 // TESTS
 stringCompression('aaaabbbccaad') === 'a4b3c2a2d1'
+  ? console.log('Test passed')
+  : console.log('Test failed');
+
+stringCompression2('aaaabbbccaad') === 'a4b3c2a2d1'
+  ? console.log('Test passed')
+  : console.log('Test failed');
+
+stringCompression2('aaab') === 'a3b1'
   ? console.log('Test passed')
   : console.log('Test failed');
